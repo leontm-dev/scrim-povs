@@ -3,8 +3,8 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { ControllerUIPlayer } from "./player";
 import { ControllerUIBar } from "./bar";
-import ShapeGrid from "../ShapeGrid";
 import { useQueryState } from "nuqs";
+import { DottedGlowBackground } from "../ui/dotted-glow-background";
 
 export type GlobalPlayerState = {
   playing: boolean;
@@ -56,13 +56,19 @@ export function ControllerUI() {
 
   return (
     <div className="h-full w-full">
-      <ShapeGrid
-        speed={0.1}
-        squareSize={200}
-        direction="diagonal" // up, down, left, right, diagonal
-        borderColor="#2F293A"
-        shape="triangle" // square, hexagon, circle, triangle
-        hoverTrailAmount={0} // number of trailing hovered shapes (0 = no trail)
+      <DottedGlowBackground
+        className="pointer-events-none mask-radial-to-90% mask-radial-at-center opacity-20 dark:opacity-100"
+        opacity={1}
+        gap={10}
+        radius={1.6}
+        colorLightVar="--color-neutral-500"
+        glowColorLightVar="--color-neutral-600"
+        colorDarkVar="--color-neutral-500"
+        glowColorDarkVar="--color-sky-800"
+        backgroundOpacity={0}
+        speedMin={0.3}
+        speedMax={1.6}
+        speedScale={1}
       />
       <div
         className="p-4 w-full flex h-full group absolute top-0 left-0"
@@ -77,10 +83,10 @@ export function ControllerUI() {
               "flex md:flex-row flex-col md:items-center md:justify-center",
             urls.length > 2 &&
               urls.length < 5 &&
-              " grid md:grid-cols-2 bg-amber-300",
+              "grid md:grid-cols-2 bg-amber-300",
             urls.length > 4 &&
               urls.length < 9 &&
-              " grid md:grid-cols-3 bg-green-50",
+              "grid md:grid-cols-3 bg-green-50",
           )}
         >
           {urls.map((player, index) => (
