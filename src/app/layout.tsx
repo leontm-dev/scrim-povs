@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import { cn } from "cnfast";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { NuqsAdapter } from "nuqs/adapters/next";
@@ -37,10 +37,14 @@ export default function RootLayout({
         geistSans.variable,
         geistMono.variable,
         "font-sans",
-        dmSans.variable,
+        dmSans.variable
       )}
     >
-      <body className="min-h-full flex flex-col">
+      <head>
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
+      </head>
+      <body className="flex min-h-full flex-col">
         <Toaster />
         <TooltipProvider>
           <NuqsAdapter>{children}</NuqsAdapter>
