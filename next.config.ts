@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
     serverFunctions: true,
     browserToTerminal: false,
   },
+  typedRoutes: true,
 };
 
 export default nextConfig;
