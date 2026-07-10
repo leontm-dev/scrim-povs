@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     "povs",
     "multiple videos",
   ],
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 export default function SessionsPageClient() {
   return (
