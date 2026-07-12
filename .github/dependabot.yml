@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Wichtig: Dependabot nutzt die im Repo gefundene Lockfile.
+    # Wenn nur bun.lock existiert, wird diese verwendet.
+    open-pull-requests-limit: 20
+    labels:
+      - "dependencies"
+    cooldown:
+      default-days: 7
