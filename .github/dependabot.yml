@@ -1,13 +1,17 @@
 version: 2
 updates:
-  - package-ecosystem: "bun"
-    directory: "/"
+  # Maintain npm dependencies
+  - package-ecosystem: 'bun'
+    directory: '/'
     schedule:
-      interval: "daily"
-    # Wichtig: Dependabot nutzt die im Repo gefundene Lockfile.
-    # Wenn nur bun.lock existiert, wird diese verwendet.
-    open-pull-requests-limit: 20
-    labels:
-      - "dependencies"
+      interval: 'weekly'
     cooldown:
-      default-days: 7
+      default-days: 3
+
+  # Maintain GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    cooldown:
+      default-days: 3
