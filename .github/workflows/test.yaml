@@ -23,6 +23,7 @@ jobs:
   build-and-push:
     needs: test_build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.actor != 'dependabot[bot]'
     permissions:
       contents: read
       packages: write
