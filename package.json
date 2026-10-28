@@ -17,7 +17,7 @@
     "nuqs": "^2.10.2",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "radix-ui": "^1.7.0",
-    "react": "19.3.0",
+    "react": "19.3.1",
     "react-dom": "19.3.1",
     "react-youtube": "^10.1.0",
     "shadcn": "^4.22.0",
